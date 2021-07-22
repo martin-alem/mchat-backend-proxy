@@ -46,4 +46,29 @@ profile.signup = {
         "path": "/signup/setup"
     }
 }
+
+profile.reset = {
+    "host": "localhost",
+    "port": 5000,
+    "headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+    },
+    "reset": {
+        "method": "POST",
+        "path": "/reset"
+    },
+    "verify": {
+        "method": "POST",
+        "path": "/reset/verify",
+    },
+    "resend": {
+        "method": "POST",
+        "path": "/reset/verify/resend",
+    },
+    "change": {
+        "method": "POST",
+        "path": "/reset/change"
+    }
+}
 module.exports = profile;

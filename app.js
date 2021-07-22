@@ -10,7 +10,8 @@ const app = express();
 
 const pingRouter = require(path.join(__dirname, "routes/pingRoute"));
 const authRoute = require(path.join(__dirname, "routes/authRoute"));
-const signupRoute = require(path.join(__dirname, "routes/signupRoute"))
+const signupRoute = require(path.join(__dirname, "routes/signupRoute"));
+const resetRoute = require(path.join(__dirname, "routes/resetRoute"))
 
 //app settings
 app.set("x-powered-by", false);
@@ -24,6 +25,10 @@ app.use("/auth", authRoute);
 
 //Registration Route middleware
 app.use("/signup", signupRoute);
+
+//Password Reset Route middleware
+app.use("/reset", resetRoute);
+
 app.use("/", pingRouter);
 
 
