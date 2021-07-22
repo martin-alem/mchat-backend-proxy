@@ -9,8 +9,8 @@ const express = require("express");
 const app = express();
 
 const pingRouter = require(path.join(__dirname, "routes/pingRoute"));
-const loginRoute = require(path.join(__dirname, "routes/loginRoute"));
-const logoutRoute = require(path.join(__dirname, "routes/logoutRoute"))
+const authRoute = require(path.join(__dirname, "routes/authRoute"));
+const signupRoute = require(path.join(__dirname, "routes/signupRoute"))
 
 //app settings
 app.set("x-powered-by", false);
@@ -19,9 +19,11 @@ app.set("x-powered-by", false);
 app.use(express.json());
 
 
-//Route middleware
-app.use("/login", loginRoute);
-app.use("/logout", logoutRoute);
+//Authentication Route middleware
+app.use("/auth", authRoute);
+
+//Registration Route middleware
+app.use("/signup", signupRoute);
 app.use("/", pingRouter);
 
 

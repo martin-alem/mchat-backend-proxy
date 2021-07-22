@@ -8,9 +8,10 @@ const path = require("path");
 const express = require("express");
 const router = express.Router({ caseSensitive: true });
 
-const LoginController = require(path.join(__dirname, "../controllers/LoginController"));
+const AuthController = require(path.join(__dirname, "../controllers/AuthController"));
 
-router.post("/", (req, res) => LoginController.login(req, res));
-router.use(LoginController.invalid);
+router.post("/login", (req, res) => AuthController.login(req, res));
+router.get("/logout", (req, res) => AuthController.logout(req, res));
+router.use(AuthController.invalid);
 
 module.exports = router;

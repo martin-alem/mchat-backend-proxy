@@ -6,6 +6,8 @@
 
 const path = require('path');
 const SendResponse = require(path.join(__dirname, "../utils/SendResponse"));
+const Helper = require(path.join(__dirname, '../utils/Helper'))
+
 class Controller {
 
     /**
@@ -17,6 +19,15 @@ class Controller {
         const statusCode = 404;
         const error = "Invalid request";
         SendResponse.failedResponse(statusCode, req, res, error);
+    }
+
+    static async makeRequest(settings, req, res) {
+
+        const response = await Helper.forwardRequest(settings, req.body);
+        const statusCode = response.statusCode;
+        const message = JSON.parse(response["message"]);
+        const headers = response["headers"];
+        SendResponse.successResponse(statusCode, req, res, message, headers);
     }
 }
 
