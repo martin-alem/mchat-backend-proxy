@@ -7,8 +7,10 @@
 const path = require("path");
 const express = require("express");
 const app = express();
-const keyRouter = require(path.join(__dirname, "routes/keyRoute"));
+
 const pingRouter = require(path.join(__dirname, "routes/pingRoute"));
+const loginRoute = require(path.join(__dirname, "routes/loginRoute"));
+const logoutRoute = require(path.join(__dirname, "routes/logoutRoute"))
 
 //app settings
 app.set("x-powered-by", false);
@@ -18,7 +20,8 @@ app.use(express.json());
 
 
 //Route middleware
-app.use("/key", keyRouter);
+app.use("/login", loginRoute);
+app.use("/logout", logoutRoute);
 app.use("/", pingRouter);
 
 

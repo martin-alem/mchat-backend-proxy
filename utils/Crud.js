@@ -6,7 +6,7 @@
 
 const fs = require("fs");
 const path = require("path");
-const Logger = require(path.resolve(__dirname, "./Logger"))
+const Logger = require(path.resolve(__dirname, "./Logger"));
 
 class CRUD {
 

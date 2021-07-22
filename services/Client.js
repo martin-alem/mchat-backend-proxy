@@ -4,7 +4,6 @@
  * Martin Alemajoh
  */
 const http = require('http');
-const path = require('path');
 
 class Client {
 
@@ -13,7 +12,7 @@ class Client {
      * @param {object} options options used for making an http request.
      * @returns {promise} a promise that resolves with the response.
      */
-    static makeRequest(options) {
+    static makeRequest(options, body) {
         return new Promise((resolve, reject) => {
             const response = {}
             let data = "";
@@ -35,7 +34,7 @@ class Client {
             request.on('error', error => {
                 reject(error);
             });
-
+            request.write(body);
             request.end();
         });
     }

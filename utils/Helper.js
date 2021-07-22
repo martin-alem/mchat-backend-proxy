@@ -7,7 +7,6 @@
 const { createSign } = require("crypto");
 const path = require('path');
 const Client = require(path.join(__dirname, '../services/Client'));
-const Crud = require(path.join(__dirname, './Crud'));
 
 class Helper {
 
@@ -78,38 +77,17 @@ class Helper {
      * @param {string} type type of key. private or public
      * @returns {promise} a promise that will be resolved to a key.
      */
-    static async getKey(type) {
+    static async forwardRequest(settings, body = {}) {
         const options = {
-            hostname: 'localhost',
-            port: 5000,
-            path: `/proxy/key?secrete=home_server&type=${type}`,
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
+            hostname: settings["host"],
+            port: settings["port"],
+            path: settings["path"],
+            method: settings["method"],
+            headers: settings["headers"],
         };
-
-        const response = await Client.makeRequest(options);
-        if (response.statusCode === 200) {
-            const d = JSON.parse(response.message);
-            const key = d.message;
-            return key;
-        }
-        else {
-            return null;
-        }
-    }
-
-    /**
-     * Builds an html template
-     * @param {string} href 
-     * @param {string} type 
-     * @returns 
-     */
-    static async buildEmailTemplate(name) {
-        const template = await Crud.read(`${name}.html`);
-        return template;
+        body = JSON.stringify(body);
+        const response = await Client.makeRequest(options, body);
+        return response;
     }
 }
 
