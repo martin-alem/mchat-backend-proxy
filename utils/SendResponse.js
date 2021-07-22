@@ -32,10 +32,10 @@ class SendResponse {
     static failedResponse(statusCode, req, res, error) {
         res.type("json");
         res.status(statusCode);
-        res.set("Access-Control-Allow-Origin", `${req.hostname}`);
+        res.set("Access-Control-Allow-Origin", `${process.env.FRONTEND_URL}`);
         res.set("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
-        res.set("Access-Control-Allow-Credentials", false);
-        res.set("Access-Control-Allow-Headers", "Access-Control-Allow-Origin, Access-Control-Allow-Methods, Access-Control-Allow-Credentials");
+        res.set("Access-Control-Allow-Credentials", true);
+        res.set("Access-Control-Allow-Headers", "Access-Control-Allow-Origin, Access-Control-Allow-Methods, Access-Control-Allow-Credentials, Content-Type");
         res.set("Access-Control-Max-Age", 86400);
         res.set("Date", new Date().toUTCString());
         res.set("Connection", "keep-alive");
