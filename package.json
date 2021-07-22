@@ -1,0 +1,37 @@
+{
+  "name": "proxy",
+  "version": "1.0.0",
+  "description": "Proxy server for orchestrating request to the different services",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest",
+    "start-dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martin-alem/mchat-proxy.git"
+  },
+  "keywords": [
+    "proxy",
+    "server"
+  ],
+  "author": "Martin Alemajoh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martin-alem/mchat-proxy/issues"
+  },
+  "homepage": "https://github.com/martin-alem/mchat-proxy#readme",
+  "devDependencies": {
+    "chalk": "^4.1.1",
+    "dotenv": "^10.0.0",
+    "jest": "^27.0.6",
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
