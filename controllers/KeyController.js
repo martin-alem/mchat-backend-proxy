@@ -1,6 +1,6 @@
 /**
  * @author Martin Alemajoh
- * @description This controller handles ping requests
+ * @description This controller handles key requests
  * @date 7/19/2021
  */
 

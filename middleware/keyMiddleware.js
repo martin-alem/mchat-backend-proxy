@@ -1,6 +1,6 @@
 /**
  * @author Martin Alemajoh
- * @description Holds all the middleware functions  for signup
+ * @description Holds all the middleware functions  for key
  */
 
 const middleware = new Map();
