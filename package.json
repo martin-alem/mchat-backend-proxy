@@ -27,11 +27,11 @@
   "homepage": "https://github.com/martin-alem/mchat-proxy#readme",
   "devDependencies": {
     "chalk": "^4.1.1",
-    "dotenv": "^10.0.0",
     "jest": "^27.0.6",
     "nodemon": "^2.0.12"
   },
   "dependencies": {
+    "dotenv": "^10.0.0",
     "express": "^4.17.1"
   },
   "engines": {
