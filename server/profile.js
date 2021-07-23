@@ -6,7 +6,7 @@
 const profile = {};
 
 profile.auth = {
-    "host": "mchat-auth",
+    "host": "https://mchat-proxy-hjlxq.ondigitalocean.app",
     "port": 8080,
     "headers": {
         "Accept": "application/json",
@@ -14,11 +14,11 @@ profile.auth = {
     },
     "login": {
         "method": "POST",
-        "path": "/authenticate/login",
+        "path": "/mchat-auth/auth/authenticate/login",
     },
     "logout": {
         "method": "GET",
-        "path": "/authenticate/logout"
+        "path": "/auth/authenticate/logout"
     },
 }
 
