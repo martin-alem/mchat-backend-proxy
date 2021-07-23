@@ -14,7 +14,7 @@ profile.auth = {
     },
     "login": {
         "method": "POST",
-        "path": "/mchat-auth/auth/authenticate/login",
+        "path": "auth/authenticate/login",
     },
     "logout": {
         "method": "GET",
