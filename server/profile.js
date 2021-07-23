@@ -6,7 +6,7 @@
 const profile = {};
 
 profile.auth = {
-    "host": "mchat--auth",
+    "host": "mchat-auth",
     "port": 8080,
     "headers": {
         "Accept": "application/json",
