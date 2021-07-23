@@ -26,7 +26,7 @@ app.options("*", (req, res) => {
     res.set("Access-Control-Allow-Origin", process.env.FRONTEND_URL);
     res.set("Access-Control-Allow-Credentials", true);
     res.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-    res.set("Access-Control-Allow-Headers", "Access-Control-Allow-Origin, Access-Control-Allow-Methods, Access-Control-Allow-Credentials, Content-Type");
+    res.set("Access-Control-Allow-Headers", "Access-Control-Allow-Origin, Access-Control-Allow-Methods, Access-Control-Allow-Credentials");
     res.end();
 });
 
