@@ -5,6 +5,7 @@
  */
 
 const path = require("path");
+const cors = require("cors");
 const express = require("express");
 const app = express();
 
@@ -18,18 +19,14 @@ var corsOptions = {
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
-/**
- * Manual cors configuration
- */
-app.options("*", (req, res) => {
-    res.status(200);
-    res.set("Access-Control-Allow-Origin", process.env.FRONTEND_URL);
-    res.set("Access-Control-Allow-Credentials", true);
-    res.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-    res.set("Access-Control-Allow-Headers", "Access-Control-Allow-Origin, Access-Control-Allow-Methods, Access-Control-Allow-Credentials");
-    res.end();
-});
+var corsOptions = {
+    origin: 'http://192.168.0.71:3000',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
 
+app.options('*', cors());
+
+app.use(cors(corsOptions));
 //app settings
 app.set("x-powered-by", false);
 
