@@ -84,6 +84,8 @@ class Helper {
             path: settings["path"],
             method: settings["method"],
             headers: settings["headers"],
+            protocol: "https",
+            timeout: 10000
         };
         body = JSON.stringify(body);
         const response = await Client.makeRequest(options, body);

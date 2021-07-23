@@ -6,7 +6,7 @@
 const profile = {};
 
 profile.auth = {
-    "host": "https://mchat-proxy-hjlxq.ondigitalocean.app",
+    "host": "mchat-auth-35x46.ondigitalocean.app",
     "port": 8080,
     "headers": {
         "Accept": "application/json",
@@ -14,16 +14,16 @@ profile.auth = {
     },
     "login": {
         "method": "POST",
-        "path": "auth/authenticate/login",
+        "path": "/authenticate/login",
     },
     "logout": {
         "method": "GET",
-        "path": "/auth/authenticate/logout"
+        "path": "/authenticate/logout"
     },
 }
 
 profile.signup = {
-    "host": "mchat-signup",
+    "host": "mchat-signup-yfv5q.ondigitalocean.app",
     "port": 8080,
     "headers": {
         "Accept": "application/json",
@@ -48,7 +48,7 @@ profile.signup = {
 }
 
 profile.reset = {
-    "host": "mchat-reset",
+    "host": "mchat-reset-gxzxc.ondigitalocean.app",
     "port": 8080,
     "headers": {
         "Accept": "application/json",
