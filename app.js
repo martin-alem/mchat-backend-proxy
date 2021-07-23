@@ -21,6 +21,8 @@ var corsOptions = {
 
 app.use(cors(corsOptions));
 
+app.options('*', cors());
+
 //app settings
 app.set("x-powered-by", false);
 
