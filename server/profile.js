@@ -24,7 +24,7 @@ profile.auth = {
 
 profile.signup = {
     "host": "mchat-signup",
-    "port": 8000,
+    "port": 8080,
     "headers": {
         "Accept": "application/json",
         "Content-Type": "application/json",
@@ -49,7 +49,7 @@ profile.signup = {
 
 profile.reset = {
     "host": "mchat-reset",
-    "port": 5000,
+    "port": 8080,
     "headers": {
         "Accept": "application/json",
         "Content-Type": "application/json",
